@@ -64,7 +64,6 @@ def test_classifier(clf, dataset, feature_list, folds = 1000):
         print("Precision or recall may be undefined due to a lack of true positive predicitons.")
 
 def main():
-    # Run test_classifier()
     test_classifier(clf, dataset, feature_list)
 
 if __name__ == '__main__':
