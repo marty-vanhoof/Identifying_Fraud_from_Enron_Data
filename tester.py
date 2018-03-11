@@ -1,11 +1,11 @@
-from sklearn.cross_validation import StratifiedShuffleSplit
+from sklearn.model_selection import StratifiedShuffleSplit
 from feature_format import featureFormat, targetFeatureSplit
 
 PERF_FORMAT_STRING = "\
 \tAccuracy: {:>0.{display_precision}f}\tPrecision: {:>0.{display_precision}f}\t\
 Recall: {:>0.{display_precision}f}\tF1: {:>0.{display_precision}f}\tF2: {:>0.{display_precision}f}"
 RESULTS_FORMAT_STRING = "\tTotal predictions: {:4d}\tTrue positives: {:4d}\tFalse positives: {:4d}\
-\tFalse negatives: {:4d}\tTrue negatives: {:4d}"
+\tFalse negatives: {:4d}\n\tTrue negatives: {:4d}"
 
 def test_classifier(clf, dataset, feature_list, folds = 1000):
     '''
@@ -14,12 +14,12 @@ def test_classifier(clf, dataset, feature_list, folds = 1000):
     '''
     data = featureFormat(dataset, feature_list, sort_keys = True)
     labels, features = targetFeatureSplit(data)
-    cv = StratifiedShuffleSplit(labels, folds, random_state = 42)
+    cv = StratifiedShuffleSplit(folds, random_state = 42)
     true_negatives = 0
     false_negatives = 0
     true_positives = 0
     false_positives = 0
-    for train_idx, test_idx in cv: 
+    for train_idx, test_idx in cv.split(features, labels): 
         features_train = []
         features_test  = []
         labels_train   = []
@@ -58,7 +58,7 @@ def test_classifier(clf, dataset, feature_list, folds = 1000):
         #print clf
         print(PERF_FORMAT_STRING.format(accuracy, precision, recall, f1, f2, display_precision = 5))
         print(RESULTS_FORMAT_STRING.format(total_predictions, true_positives, false_positives, false_negatives, true_negatives))
-        print()
+        #print()
     except:
         print("Got a divide by zero when trying out:", clf)
         print("Precision or recall may be undefined due to a lack of true positive predicitons.")
