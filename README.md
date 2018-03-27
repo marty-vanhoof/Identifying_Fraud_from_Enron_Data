@@ -1,0 +1,1 @@
+Try viewing the Enron report with [jupyter nbviewer](https://nbviewer.jupyter.org/github/marty-vanhoof/Identifying_Fraud_from_Enron_Data/blob/master/enron_report.ipynb).
