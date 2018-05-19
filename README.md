@@ -1,3 +1,5 @@
+# Identifying Fraud from Enron Data
+
 In this project, I work on building a few different machine learning algorithms in order to identify fraudulent employees in the Enron scandal.  This project comes from Udacity's [Intro to Machine Learning](https://www.udacity.com/course/intro-to-machine-learning--ud120) course.  It uses Python 3.x and the following Python libraries:
 
 - [Numpy](http://www.numpy.org/)
