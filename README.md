@@ -1,5 +1,7 @@
 # Identifying Fraud from Enron Data
 
+[Link to project report](https://nbviewer.jupyter.org/github/marty-vanhoof/Identifying_Fraud_from_Enron_Data/blob/master/enron_report.ipynb)
+
 In this project, I work on building a few different machine learning models in order to identify fraudulent employees in the Enron scandal.  This project comes from Udacity's [Intro to Machine Learning](https://www.udacity.com/course/intro-to-machine-learning--ud120) course.  It uses Python 3.x and the following Python libraries:
 
 - [Numpy](http://www.numpy.org/)
@@ -7,4 +9,4 @@ In this project, I work on building a few different machine learning models in o
 - [scikit-learn](http://scikit-learn.org/stable/)
 
 
-The report for the project can be viewed in jupyter nbviewer and is available [here](https://nbviewer.jupyter.org/github/marty-vanhoof/Identifying_Fraud_from_Enron_Data/blob/master/enron_report.ipynb), or the original jupyter notebook is available [here](enron_report.ipynb).  The project is still a bit of a work in progress.
+ I'm finally coming back to finish the project after a long hiatus...
