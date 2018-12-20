@@ -10,7 +10,7 @@ Accuracy: {:>0.{display_precision}f}\tPrecision: {:>0.{display_precision}f}\
 RESULTS_FORMAT_STRING = "Total predictions: {:4d}\tTrue positives: {:4d}\tFalse positives: {:4d}\
 \nFalse negatives: {:4d}\tTrue negatives: {:4d}"
 
-def test_classifier(clf, dataset, feature_list, folds = 1000):
+def test_classifier(clf, dataset, feature_list, folds = 1000, to_print=True):
     '''
     A function that performs cross validation and computes a number of
     different metrics for a given classifier using a test set.
@@ -64,9 +64,12 @@ def test_classifier(clf, dataset, feature_list, folds = 1000):
         #               true_negatives=true_negatives)
         #results_df = pd.DataFrame.from_dict(results)
         #print(results_df)
-        print(PERF_FORMAT_STRING.format(accuracy, precision, recall, f1, f2, display_precision = 5))
-        print(RESULTS_FORMAT_STRING.format(total_predictions, true_positives, false_positives, false_negatives, true_negatives))
-        print()
+        if to_print:
+            print(PERF_FORMAT_STRING.format(accuracy, precision, recall, f1, f2, display_precision = 5))
+            print(RESULTS_FORMAT_STRING.format(total_predictions, true_positives, false_positives, false_negatives, true_negatives))
+            print()
+        else:
+            return (precision, recall, f1, accuracy)
     except:
         print("Got a divide by zero when trying out:", clf)
         print("Precision or recall may be undefined due to a lack of true positive predicitons.")
