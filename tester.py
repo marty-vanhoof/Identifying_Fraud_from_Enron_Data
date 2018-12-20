@@ -69,7 +69,7 @@ def test_classifier(clf, dataset, feature_list, folds = 1000, to_print=True):
             print(RESULTS_FORMAT_STRING.format(total_predictions, true_positives, false_positives, false_negatives, true_negatives))
             print()
         else:
-            return (precision, recall, f1, accuracy)
+            return (round(precision, 5), round(recall, 5), round(f1, 5), round(accuracy, 5))
     except:
         print("Got a divide by zero when trying out:", clf)
         print("Precision or recall may be undefined due to a lack of true positive predicitons.")
