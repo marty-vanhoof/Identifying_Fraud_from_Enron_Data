@@ -13,6 +13,6 @@ In this project, I work on building a few different machine learning models in o
 
 Since the dataset is so imbalanced (18 POI vs 128 non-POI), accuracy is not the best metric for measuring the performance of a machine learning classifier.  For this reason, I try to optimize both precision and recall and this is done by optimizing the F1 score, which is a weighted average of both.  The results are below, sorted by F1 score in descending order. 
 
-<img src="final_results.png" alt="final_results" width="250" height="250"/>
+<img src="final_results.png" alt="final_results" width="450" height="250"/>
 
 Logistic regression has the highest recall and k-nearest neighbors has the highest precision.  In the future, I want to try to combine both these classifiers with an ensemble method (such as a [voting classifier](https://scikit-learn.org/stable/modules/ensemble.html#voting-classifier)) in order to get the best results from both.
